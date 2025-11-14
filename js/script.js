@@ -9,9 +9,10 @@
 // Far sì che le email vengono stampati solo quando arrivano tutti i 10 email
 
 const emailListContainer = document.querySelector(".email-list-container");
+const newEmailsBtn = document.querySelector("button");
 
 // const emailListItem = `<li>${email}</li>`;
-
+const getEmailList = () => {
 for (let i = 0; i < 10; i++) {
 axios
   .get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -20,4 +21,10 @@ axios
     const emailListItem = `<li>${email}</li>`;
     emailListContainer.innerHTML += emailListItem;
   });
-};
+}};
+getEmailList();
+newEmailsBtn.addEventListener("click", () => 
+  {
+    emailListContainer.innerHTML = "";
+    getEmailList();
+  });
