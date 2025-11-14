@@ -11,20 +11,23 @@
 const emailListContainer = document.querySelector(".email-list-container");
 const newEmailsBtn = document.querySelector("button");
 
-// const emailListItem = `<li>${email}</li>`;
 const getEmailList = () => {
-for (let i = 0; i < 10; i++) {
-axios
-  .get("https://flynn.boolean.careers/exercises/api/random/mail")
-  .then((resp) => {
-    const email = resp.data.response;
-    const emailListItem = `<li>${email}</li>`;
-    emailListContainer.innerHTML += emailListItem;
-  });
-}};
+  let counter = 0;
+  let emailList = "";
+  for (let i = 0; i < 10; i++) {
+    axios
+      .get("https://flynn.boolean.careers/exercises/api/random/mail")
+      .then((resp) => {
+        const email = resp.data.response;
+        const emailListItem = `<li>${email}</li>`;
+        emailList += emailListItem;
+        counter++;
+        if (counter === 10) emailListContainer.innerHTML = emailList;
+      });
+  }
+};
 getEmailList();
-newEmailsBtn.addEventListener("click", () => 
-  {
-    emailListContainer.innerHTML = "";
-    getEmailList();
-  });
+newEmailsBtn.addEventListener("click", () => {
+  emailListContainer.innerHTML = "";
+  getEmailList();
+});
