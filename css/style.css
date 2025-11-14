@@ -7,11 +7,15 @@ body {
 }
 
 .email-list-container > li{
-  background-color: rgb(153, 151, 149);
+  background-color: rgb(183 167 152);
 }
 
 svg {
   height: 100px;
   width: 100px;
   opacity: 0.5;
+}
+
+.btn-secondary {
+  background-color: rgb(189, 147, 107);
 }
