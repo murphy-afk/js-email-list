@@ -6,16 +6,28 @@ body {
   background-color: rgb(241, 225, 204);
 }
 
-.email-list-container > li{
+.email-list-container>li {
   background-color: rgb(183 167 152);
+}
+
+
+.btn-secondary {
+  background-color: rgb(189, 147, 107);
 }
 
 svg {
   height: 100px;
   width: 100px;
   opacity: 0.5;
+  animation: rotate 1s linear infinite;
 }
 
-.btn-secondary {
-  background-color: rgb(189, 147, 107);
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
