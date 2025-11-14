@@ -7,3 +7,14 @@
 // Abbellire con CSS o Bootstrap
 // Inserire un bottone che al click faccia il fetch altre 10 mail (sostituendo quelle precedenti)
 // Far sì che le email vengono stampati solo quando arrivano tutti i 10 email
+
+const emailListContainer = document.querySelector(".email-list-container");
+
+// const emailListItem = `<li>${email}</li>`;
+
+axios
+  .get("https://flynn.boolean.careers/exercises/api/random/mail")
+  .then((resp) => {
+    console.log(resp.data.response);
+    
+  });
