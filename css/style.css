@@ -1,0 +1,11 @@
+.container {
+  background-color: rgb(204, 191, 174);
+}
+
+body {
+  background-color: rgb(241, 225, 204);
+}
+
+.email-list-container > li{
+  background-color: rgb(153, 151, 149);
+}

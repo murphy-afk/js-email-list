@@ -19,7 +19,7 @@ const getEmailList = () => {
       .get("https://flynn.boolean.careers/exercises/api/random/mail")
       .then((resp) => {
         const email = resp.data.response;
-        const emailListItem = `<li>${email}</li>`;
+        const emailListItem = `<li class="list-group-item">${email}</li>`;
         emailList += emailListItem;
         counter++;
         if (counter === 10) emailListContainer.innerHTML = emailList;
