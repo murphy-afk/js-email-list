@@ -10,6 +10,7 @@
 
 const emailListContainer = document.querySelector(".email-list-container");
 const newEmailsBtn = document.querySelector("button");
+const loadingScreen = document.querySelector(".loading-screen");
 
 const getEmailList = () => {
   let counter = 0;
@@ -22,7 +23,11 @@ const getEmailList = () => {
         const emailListItem = `<li class="list-group-item">${email}</li>`;
         emailList += emailListItem;
         counter++;
-        if (counter === 10) emailListContainer.innerHTML = emailList;
+        loadingScreen.classList.remove("d-none");
+        if (counter === 10) {
+          emailListContainer.innerHTML = emailList;
+          loadingScreen.classList.add("d-none");
+        }
       });
   }
 };

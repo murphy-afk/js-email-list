@@ -9,3 +9,9 @@ body {
 .email-list-container > li{
   background-color: rgb(153, 151, 149);
 }
+
+svg {
+  height: 100px;
+  width: 100px;
+  opacity: 0.6;
+}
